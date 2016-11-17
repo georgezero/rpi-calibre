@@ -1,9 +1,9 @@
-FROM resin/rpi-raspbian:wheezy
-MAINTAINER Simon Cheung <cheung.sai.ho@gmail.com>
+FROM resin/rpi-raspbian:jessie
+MAINTAINER George Zero <georgezero@trove.nyc>
 
 RUN apt-get update \
  && apt-get install -y \
-      calibre \
+      calibre rsync wget curl zip git zsh vim tmux \
  && rm -rf /tmp/*
 
 RUN mkdir -p /opt/calibre/library
