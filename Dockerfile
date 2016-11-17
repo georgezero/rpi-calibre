@@ -6,6 +6,7 @@ RUN apt-get update \
       calibre rsync wget curl zip git zsh vim tmux \
  && rm -rf /tmp/*
 
+RUN wget -O .zshrc http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 RUN mkdir -p /opt/calibre/library
 
 EXPOSE 8080
