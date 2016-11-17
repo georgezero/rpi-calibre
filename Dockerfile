@@ -6,9 +6,9 @@ RUN apt-get update \
       calibre rsync wget curl zip git zsh vim tmux \
  && rm -rf /tmp/*
 
-RUN wget -O .zshrc http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-RUN mkdir -p /opt/calibre/library
+RUN wget -O ~/.zshrc http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+RUN mkdir -p /opt/calibre
 
 EXPOSE 8080
-VOLUME ["/opt/calibre/library"]
-CMD /usr/bin/calibre-server --with-library=/opt/calibre/library --username=$USERNAME --password=$PASSWORD
+VOLUME ["/opt/calibre"]
+CMD /usr/bin/calibre-server --with-library=/opt/calibre --username=$USERNAME --password=$PASSWORD
